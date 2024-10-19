@@ -1,0 +1,13 @@
+services:
+  superdb:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=bookwareuser
+      - POSTGRES_DB=bookwaredb
+    ports:
+      - 5435:5432
+  adminer:
+    image: adminer
+    ports:
+      - 7173:8080
