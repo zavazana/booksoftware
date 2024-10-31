@@ -63,7 +63,7 @@ public class ReviewService {
         List<Review> reviews = reviewRepository.findByBook(book);
         return reviews
                 .stream()
-                .map(ReviewMapper::mapToDto)  // verwende Method-Reference
+                .map(ReviewMapper::mapToDto)
                 .collect(Collectors.toList());
     }
 
@@ -75,7 +75,7 @@ public class ReviewService {
         List<Review> reviews = reviewRepository.findByUser(user);
         return reviews
                 .stream()
-                .map(ReviewMapper::mapToDto)  // verwende Method-Reference
+                .map(ReviewMapper::mapToDto)
                 .collect(Collectors.toList());
     }
 }

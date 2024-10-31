@@ -20,11 +20,10 @@ public class Loan {
     @JoinColumn(name = "book_exemplar_id")
     private BookExemplar bookExemplar;
 
-    private LocalDate loanDate;     // Datum der Ausleihe
-    private LocalDate dueDate;      // Geplantes Rückgabedatum
-    private LocalDate returnDate;   // Tatsächliches Rückgabedatum, wenn vorhanden
+    private LocalDate loanDate;
+    private LocalDate dueDate;
+    private LocalDate returnDate;
 
-    // Getter, Setter, Constructor
 
     public Long getId() {
         return id;

@@ -14,11 +14,11 @@ public class LoanMapper {
             return null;
         }
 
-        Loan loan = new Loan(); // ID wird automatisch gesetzt
+        Loan loan = new Loan();
         loan.setUser(user);
         loan.setBookExemplar(bookExemplar);
-        loan.setLoanDate(LocalDate.now()); // Setze das aktuelle Datum als Ausleihdatum
-        loan.setDueDate(loan.getLoanDate().plusDays(30)); // Beispiel: 30 Tage nach Ausleihe
+        loan.setLoanDate(LocalDate.now());
+        loan.setDueDate(loan.getLoanDate().plusDays(30));
 
         return loan;
     }
@@ -31,8 +31,8 @@ public class LoanMapper {
 
         return new LoanResponseDto(
                 loan.getId(),
-                Optional.ofNullable(loan.getUser()).map(User::getId).orElse(null), // Holen Sie sich die User-ID, falls vorhanden
-                Optional.ofNullable(loan.getBookExemplar()).map(BookExemplar::getId).orElse(null), // Holen Sie sich die BookExemplar-ID, falls vorhanden
+                Optional.ofNullable(loan.getUser()).map(User::getId).orElse(null),
+                Optional.ofNullable(loan.getBookExemplar()).map(BookExemplar::getId).orElse(null),
                 loan.getLoanDate(),
                 loan.getDueDate(),
                 loan.getReturnDate()

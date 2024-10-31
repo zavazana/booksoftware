@@ -13,15 +13,13 @@ public class BookExemplar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Viele Instanzen von BookExemplaren gehören zu genau einer Instanz von Buch
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
     @Enumerated(EnumType.STRING)
-    private BookExemplarStatus status; // Status des Buch-Exemplars
+    private BookExemplarStatus status;
 
-    // Ein BookExemplar kann in mehreren Loans erscheinen, daher OneToMany
     @OneToMany(mappedBy = "bookExemplar")
     private List<Loan> loans;
 

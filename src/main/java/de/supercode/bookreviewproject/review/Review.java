@@ -20,7 +20,7 @@ public class Review {
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "user_id") // Beziehung zur User-Entität
+    @JoinColumn(name = "user_id")
     private User user;
 
     // Getter und Setter

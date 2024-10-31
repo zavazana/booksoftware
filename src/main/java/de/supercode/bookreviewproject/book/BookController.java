@@ -37,21 +37,21 @@ public class BookController {
         return new ResponseEntity<>(createdBook, HttpStatus.CREATED);
     }
 
-    // ADMIN -> DELETE (Change from POST to DELETE)
+    // ADMIN -> DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         bookService.deleteBookById(id);
         return ResponseEntity.noContent().build();
     }
 
-    // ADMIN -> UPDATE (Change from POST to PUT)
+    // ADMIN -> UPDATE
     @PutMapping("/{id}")
     public ResponseEntity<BookResponseDto> updateBook(@RequestBody BookRequestDto bookRequestDto, @PathVariable Long id) {
         BookResponseDto updatedBook = bookService.updateBookByID(id, bookRequestDto);
         return ResponseEntity.ok(updatedBook);
     }
 
-    // SORTING
+
 
     // ALL -> Sort by the number of reviews (descending)
     @GetMapping("/most-reviews")
@@ -67,7 +67,6 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
-    // SEARCH
 
     // ALL -> Search books by author
     @GetMapping("/author")

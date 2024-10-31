@@ -24,7 +24,7 @@ public class Bill {
     private double amount;
 
     @Enumerated(EnumType.STRING)
-    private BillStatus status; // Status der Rechnung
+    private BillStatus status;
 
     // Getter und Setter
 
